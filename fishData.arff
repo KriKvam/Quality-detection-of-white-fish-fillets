@@ -1,0 +1,18 @@
+@relation fish
+
+@attribute filletArea numeric
+@attribute hbArea numeric
+@attribute metHbArea numeric
+@attribute oxyHbArea numeric
+
+@data
+149088	3971	1000	500  
+152500	300	100	50    
+110000	0	0	0
+148000	8000	2000	1000  
+148500	600	370	20    
+149000	800	200	110   
+150000	5000	2365	679   
+151000	0	0	0     
+150500	10	5	0     
+151500	50	40	10    

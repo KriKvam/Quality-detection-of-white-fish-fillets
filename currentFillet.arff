@@ -1,0 +1,9 @@
+@relation fish
+
+@attribute filletArea numeric
+@attribute hbArea numeric
+@attribute metHbArea numeric
+@attribute oxyHbArea numeric
+
+@data
+43402,3259,3259,3258

@@ -27,10 +27,10 @@ public class WriteData {
      * This is used to write the data from the fillet to an ARFF file.
      * The file will be overwritten when the method is called again.
      * 
-     * @param a
-     * @param b
-     * @param c
-     * @param d
+     * @param a area of the fillet
+     * @param b area of the hemoglobin spots
+     * @param c area of the met hemoglobin spots
+     * @param d area of the oxy hemoglobin spots
      * @throws IOException
      */
     public void writeArff(int a, int b, int c, int d) throws IOException {

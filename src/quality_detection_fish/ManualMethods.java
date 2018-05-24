@@ -58,13 +58,14 @@ public class ManualMethods {
     }
 
     /**
-     * Applies Otsu threshold to the input image, erodes and dilates the 
-     * image and returns the area of the biggest white blob in the image.
+     * Grabs image from the camera, applies Otsu threshold to the input image,
+     * erodes and dilates the image and returns the area of the largest white
+     * blob in the image.
      * 
      * This is used to find the area of the fillet.
      * This is used for manual control in the GUI.
      * 
-     * @return
+     * @return the area of the largest white blob in the image
      */
     public double manAreaCheck() {
         try {
@@ -87,8 +88,8 @@ public class ManualMethods {
     /**
      * Finds the contours of the white blobs in a binary image and returns the
      * area of the biggest blob.
-     * @param input
-     * @return
+     * @param input binary image
+     * @return area of the largest white blob in the input image.
      */
     public double manMaxGridCheck(Mat input) {
         Mat out = new Mat();
@@ -115,8 +116,8 @@ public class ManualMethods {
     /**
      * Finds the contours of the white blobs in a binary image and returns the
      * total area of all the white blobs.
-     * @param input
-     * @return
+     * @param input binary image
+     * @return the total area of all the white blobs in the input image.
      */
     public double manTotalGridCheck(Mat input) {
         Mat out = new Mat();
@@ -138,12 +139,13 @@ public class ManualMethods {
     }
 
     /**
-     * Applies an adaptive threshold to the input image, complements the image
-     * and returns the total area of all the white blobs.
+     * Grabs the image taken by the manAreaCheck method applies an adaptive 
+     * threshold to the input image, complements the image and returns the 
+     * total area of all the white blobs.
      * 
      * This is used to find the total area of the blood spots on the fillet.
      * This is used for manual control in the GUI.
-     * @return
+     * @return the total area of all the white blobs in the image.
      */
     public double manBloodThreshold() {
         
@@ -171,8 +173,8 @@ public class ManualMethods {
      * 
      * This is the image grabbed from the camera.
      * 
-     * @return
-     * @throws Exception
+     * @return the original image.
+     * @throws Exception if the conversion from Mat to BufferedImage fails.
      */
     public BufferedImage getOrg() throws Exception {
         BufferedImage orgImage = Mat2BufferedImage(org);
@@ -185,8 +187,8 @@ public class ManualMethods {
      * This is the image grabbed from the camera, with contours drawn on the
      * image to highlight the edges of the fillet.
      * 
-     * @return
-     * @throws Exception
+     * @return the original image with contours found in the dilated image.
+     * @throws Exception if the conversion from Mat to BufferedImage fails.
      */
     public BufferedImage getBinary() throws Exception {
         Mat draw = drawContour(dilate_dst);
@@ -202,7 +204,7 @@ public class ManualMethods {
      * This is the image captured by the camera, with contours drawn on the 
      * image to highlight the edges of the blood spots on the fillet.
      * 
-     * @return
+     * @return the original image with contours found in the bloodbin image.
      * @throws Exception
      */
     public BufferedImage getBlood() throws Exception {
@@ -215,8 +217,8 @@ public class ManualMethods {
      * Converts the input matrix to a binary image using Otsu threshold, erodes
      * and dilates the image, then returns it.
      * 
-     * @param input
-     * @return
+     * @param input image
+     * @return binary image of the input image.
      */
     public Mat convertToBinary(Mat input){
         Mat binImage = input;
@@ -233,8 +235,8 @@ public class ManualMethods {
      * Converts the input matrix to an binary image using adaptive threshold, 
      * complements the image, then returns it.
      * 
-     * @param input
-     * @return
+     * @param input image
+     * @return binary image of the input image.
      */
     public Mat convertToAdaptiveBinary(Mat input){
         Mat adapImage = input;
@@ -250,8 +252,8 @@ public class ManualMethods {
      * Finds contours in the input matrix, draws the contours onto the original
      * image grabbed from the camera and returns the matrix.
      * 
-     * @param input
-     * @return
+     * @param input binary image
+     * @return the original image with the contours found in the input image.
      */
     public Mat drawContour(Mat input){
         Mat contourImg = new Mat();

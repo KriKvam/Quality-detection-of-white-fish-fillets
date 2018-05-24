@@ -40,8 +40,8 @@ public class Camera extends Thread {
 
     /**
      * Grabs a frame from the VideoCapture and returns it as a matrix.
-     * @return 
-     * @throws InterruptedException
+     * @return an image from the camera.
+     * @throws InterruptedException if no camera is connected.
      */
     public Mat manualCapture() throws InterruptedException {
 
@@ -64,7 +64,7 @@ public class Camera extends Thread {
     /**
      * Stores different images of type Mat in the StorageBox class based on the 
      * input. Valid inputs are: "red", "green" and "blue".
-     * @param input
+     * @param input string to tell where the images captured are to be saved.
      */
     public void autoCapture(String input) {
 
@@ -93,7 +93,7 @@ public class Camera extends Thread {
 
     /**
      * Grabs a frame from the VideoCapture and returns it as a matrix.
-     * @return
+     * @return an image from the camera.
      */
     public Mat getImage(){
         return img;

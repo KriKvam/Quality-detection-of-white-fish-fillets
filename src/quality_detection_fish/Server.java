@@ -51,7 +51,7 @@ public class Server extends Thread {
 
     /**
      * Sets the output parameter to be sent to the arduino client.
-     * @param input
+     * @param input value to be sent to the arduino client
      */
     public void setOutput(char input) {
         output = input;
@@ -59,7 +59,7 @@ public class Server extends Thread {
 
     /**
      * Returns the parameter read from the arduino client.
-     * @return
+     * @return string input from arduino client.
      */
     public String getInput() {
         return auto;

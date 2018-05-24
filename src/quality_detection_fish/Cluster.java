@@ -33,8 +33,8 @@ public class Cluster {
      * Retrieves dataset from the input string and builds and trains a K-Means 
      * model. The model has 4 clusters. The cluster is then saved to destination
      * and loaded as the new cluster model.
-     * @param input
-     * @throws Exception
+     * @param input path to the dataset 
+     * @throws Exception if the input strings path is invalid.
      */
     public void runTrainingSet(String input) throws Exception {
         String dataset = input;
@@ -58,7 +58,7 @@ public class Cluster {
 
     /**
      * Loads a cluster model and defines it as the one to be used.
-     * @throws Exception
+     * @throws Exception if the dataset path is invalid.
      */
     public void loadCluster() throws Exception {
         // Change the string to your file location.
@@ -72,7 +72,7 @@ public class Cluster {
      * Loads an ARFF file containing the data of one object, evaluates the 
      * data with the cluster and stores the cluster evaluation in the StorageBox
      * class.
-     * @throws Exception
+     * @throws Exception if the dataset path is invalid.
      */
     public void checkCluster() throws Exception {
 
@@ -105,7 +105,7 @@ public class Cluster {
     /**
      * Returns the value of trainingFlag.
      * This value is used to check if training of the cluster is finished.
-     * @return
+     * @return a boolean value.
      */
     public boolean getTrainingFlag(){
         return trainingFlag;

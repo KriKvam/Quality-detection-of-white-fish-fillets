@@ -33,10 +33,10 @@ public class Logging {
      * 
      * This is used to logg the data from each fillet.
      * 
-     * @param area
-     * @param HB
-     * @param MetHB
-     * @param OxyHB
+     * @param area area of the fillet
+     * @param HB area of the hemoglobin spots
+     * @param MetHB area of the met-hemoglobin spots
+     * @param OxyHB area of the oxy-hemoglobin spots
      */
     public void writeToLogg(int area, int HB, int MetHB, int OxyHB) {
 
@@ -64,10 +64,10 @@ public class Logging {
      * 
      * This CSV file is used to have a total count of all the fillets checked.
      * 
-     * @param good
-     * @param medium
-     * @param bad
-     * @param small
+     * @param good the number of fillets classified as Good.
+     * @param medium the number of fillets classified as Medium.
+     * @param bad the number of fillets classified as Bad.
+     * @param small the number of fillets classified as small.
      */
     public void writeClassificationLogg(int good, int medium, int bad, int small) {
 

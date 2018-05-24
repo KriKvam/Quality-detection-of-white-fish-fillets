@@ -52,7 +52,7 @@ public class StorageBox {
      * 
      * This is the red illuminated image captured of the fillet.
      * 
-     * @param imgMat
+     * @param imgMat an image of type Mat.
      */
     public synchronized void setRedImage(Mat imgMat) {
         while (redAvailable == true) {
@@ -72,7 +72,7 @@ public class StorageBox {
      * 
      * This is the red illuminated image captured of the fillet.
      * 
-     * @return
+     * @return an image of type Mat.
      */
     public synchronized Mat getRedImage() {
         while (redAvailable == false) {
@@ -92,7 +92,7 @@ public class StorageBox {
      * 
      * This is the green illuminated image captured of the fillet.
      * 
-     * @param imgMat
+     * @param imgMat an image of type Mat.
      */
     public synchronized void setGreenImage(Mat imgMat) {
         while (greenAvailable == true) {
@@ -112,7 +112,7 @@ public class StorageBox {
      * 
      * This is the green illuminated image captured of the fillet.
      * 
-     * @return
+     * @return an image of type Mat.
      */
     public synchronized Mat getGreenImage() {
         while (greenAvailable == false) {
@@ -132,7 +132,7 @@ public class StorageBox {
      * 
      * This is the blue illuminated image captured of the fillet.
      * 
-     * @param imgMat
+     * @param imgMat an image of type Mat.
      */
     public synchronized void setBlueImage(Mat imgMat) {
         while (blueAvailable == true) {
@@ -152,7 +152,7 @@ public class StorageBox {
      * 
      * This is the blue illuminated image captured of the fillet.
      * 
-     * @return
+     * @return an image of type Mat.
      */
     public synchronized Mat getBlueImage() {
         while (blueAvailable == false) {
@@ -174,7 +174,7 @@ public class StorageBox {
      * This is a duplicate of red image which will be used to find the area
      * of the fillet.
      * 
-     * @param imgMat
+     * @param imgMat an image of type Mat.
      */
     public synchronized void setOrgImage(Mat imgMat) {
         while (orgAvailable == true) {
@@ -196,7 +196,7 @@ public class StorageBox {
      * This is a duplicate of red image which will be used to find the area
      * of the fillet.
      * 
-     * @return
+     * @return an image of type Mat.
      */
     public synchronized Mat getOrgImage() {
         while (orgAvailable == false) {
@@ -216,7 +216,7 @@ public class StorageBox {
      * 
      * This is the classification value of the fillet.
      * 
-     * @param input
+     * @param input an image of type Mat.
      */
     public synchronized void setFilletClass(String input){
          while (fishClassFlag == true) {
@@ -236,7 +236,7 @@ public class StorageBox {
      * 
      * This is the classification value of the fillet.
      * 
-     * @return
+     * @return an image of type Mat.
      */
     public synchronized String getFilletClass() {
         while (fishClassFlag == false) {
@@ -256,7 +256,7 @@ public class StorageBox {
      * 
      * This value is used to tell the server class to send a value to the client.
      * 
-     * @param input
+     * @param input an image of type Mat.
      */
     public void setBlitsFlag(boolean input) {
         synchronized (lock) {
@@ -270,7 +270,7 @@ public class StorageBox {
      * 
      * This value is used to tell the server class to send a value to the client.
      * 
-     * @return
+     * @return an image of type Mat.
      */
     public boolean getBlitsFlag() {
         synchronized (lock) {
@@ -284,7 +284,7 @@ public class StorageBox {
      * 
      * This string is the value the server will send to the client.
      * 
-     * @param input
+     * @param input a output string from the arduino client.
      */
     public void setArduinoAutput(String input){
         arduinoOut = input;
@@ -295,7 +295,7 @@ public class StorageBox {
      * 
      * This string is the value the server will send to the client.
      * 
-     * @return
+     * @return a output string from the arduino client.
      */
     public String getArduinoOutput(){
         return arduinoOut;
@@ -306,7 +306,7 @@ public class StorageBox {
      * 
      * This parameter is used to shut down all the threads in the application.
      * 
-     * @return
+     * @return boolean value used to shut down the threads.
      */
     public boolean getShutdown(){
         return shutdown;
@@ -317,7 +317,7 @@ public class StorageBox {
      * 
      * This parameter is used to shut down all the threads in the application.
      * 
-     * @param input
+     * @param input boolean value to shut down the threads.
      */
     public void setShutdown(boolean input){
         shutdown = input;
@@ -329,7 +329,7 @@ public class StorageBox {
      * This parameter is used to indicate that the camera class is done 
      * capturing images.
      * 
-     * @param input
+     * @param input boolean value to indicate the image capture is done.
      */
     public void setCaptureDone(boolean input){
         synchronized (imageLock) {
@@ -343,7 +343,7 @@ public class StorageBox {
      * This parameter is used to indicate that the camera class is done 
      * capturing images.
      * 
-     * @return
+     * @return boolean value indicating if the image capture is done.
      */
     public boolean getCaptureDone(){
         synchronized (imageLock) {
@@ -356,7 +356,7 @@ public class StorageBox {
      * 
      * This value is used to indicate that the Cluster class is done classifying 
      * the fillet.
-     * @param input
+     * @param input boolean value indicating if cluster evaluation is done or not.
      */
     public void setEvalDone(boolean input){
         synchronized (evalLock) {
@@ -370,7 +370,7 @@ public class StorageBox {
      * This value is used to indicate that the Cluster class is done classifying 
      * the fillet.
      * 
-     * @return
+     * @return boolean value indicating if cluster evaluation is done or not.
      */
     public boolean getEvalFlag(){
         synchronized (evalLock) {
@@ -383,7 +383,7 @@ public class StorageBox {
      * 
      * This value is used to indicate if object detection is turned on or off.
      * 
-     * @param input
+     * @param input boolean value to indicate if object detection is on or off.
      */
     public void setAutoDetect(boolean input){
         synchronized (auto){
@@ -396,7 +396,7 @@ public class StorageBox {
      * 
      * This value is used to indicate if object detection is turned on or off.
      * 
-     * @return
+     * @return boolean value indicating if object detection is on or not.
      */
     public boolean getAutoDetect(){
         synchronized (auto){
@@ -409,7 +409,7 @@ public class StorageBox {
      * 
      * This value is used to indicate if live stream is on or off.
      * 
-     * @param input
+     * @param input boolean value indicating if live stream is on or not.
      */
     public void setStreamFlag(boolean input){
         synchronized (stream){
@@ -422,7 +422,7 @@ public class StorageBox {
      * 
      * This value is used to indicate if live stream is on or off.
      * 
-     * @return
+     * @return boolean value indicating if live stream is on or not.
      */
     public boolean getStreamFlag(){
         synchronized (stream){
@@ -435,7 +435,7 @@ public class StorageBox {
      * 
      * This is the video frames in the live stream.
      * 
-     * @param input
+     * @param input image from the camera.
      */
     public void setVideoFrame(Mat input){
         videoFrame = input;
@@ -446,7 +446,7 @@ public class StorageBox {
      * 
      * This is the video frames in the live stream.
      * 
-     * @return
+     * @return image from the camera.
      */
     public Mat getVideoFrame(){
         return videoFrame;

@@ -71,7 +71,7 @@ public class DataDistribution extends Thread {
      * This is used to update parameters displayed in the GUI and send the 
      * classification value to to client.
      * 
-     * @param input
+     * @param input classification value from the cluster evaluation
      */
     public void compareClass(String input) {
         switch (input) {
@@ -126,7 +126,7 @@ public class DataDistribution extends Thread {
      * 
      * This is used to display the total amount of fillets checked in the GUI.
      * 
-     * @throws IOException
+     * @throws IOException if the file path is invalid.
      */
     public void getClassificationCount() throws IOException{
         String[] nextRecord;

@@ -2116,7 +2116,7 @@ public class GUI extends javax.swing.JFrame {
      * Displays the red illuminated image of the fillet in the control frame in 
      * the GUI.
      * 
-     * @param redImage
+     * @param redImage red illuminated image of the fillet.
      */
     public void setRedImage(Mat redImage) {
         red = redImage;
@@ -2139,7 +2139,7 @@ public class GUI extends javax.swing.JFrame {
      * Displays the green illuminated image of the fillet in the control frame 
      * in the GUI.
      * 
-     * @param greenImage
+     * @param greenImage green illuminated image of the fillet.
      */
     public void setGreenImage(Mat greenImage) {
         green = greenImage;
@@ -2162,7 +2162,7 @@ public class GUI extends javax.swing.JFrame {
      * Displays the blue illuminated image of the fillet in the control frame in 
      * the GUI.
      * 
-     * @param blueImage
+     * @param blueImage blue illuminated image of the fillet.
      */
     public void setBlueImage(Mat blueImage) {
         blue = blueImage;
@@ -2185,7 +2185,7 @@ public class GUI extends javax.swing.JFrame {
      * Displays the red illuminated image of the fillet in the main frame of 
      * the GUI.
      * 
-     * @param orgImage
+     * @param orgImage red illuminated image of the fillet.
      */
     public void setMainImage(Mat orgImage) {
         org = orgImage;
@@ -2205,9 +2205,9 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Sets the value of the boolean parameter start.
      * 
-     * This value is used to start the program.
+     * This value is used to start the process of the application.
      * 
-     * @param input
+     * @param input boolean value used to start the process of the application.
      */
     public void setStart(boolean input) {
         start = input;
@@ -2216,8 +2216,8 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Returns the value of the boolean parameter start.
      * 
-     * This value is used to start the program.
-     * @return
+     * This value is used to start the process of the application.
+     * @return boolean value used to start the process of the application.
      */
     public boolean getStart() {
         return start;
@@ -2226,9 +2226,9 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Converts the input matrix to a BufferedImage and returns it.
      * 
-     * @param matrix
-     * @return
-     * @throws Exception
+     * @param matrix image to be converted 
+     * @return BufferedImage of the input image.
+     * @throws Exception if the conversion from Mat to BufferedImage fails.
      */
     public static BufferedImage Mat2BufferedImage(Mat matrix) throws Exception {
         MatOfByte mob = new MatOfByte();
@@ -2242,9 +2242,9 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Finds contours in the input matrix, draws the contours onto the color
      * matrix and returns the matrix.
-     * @param input
-     * @param color
-     * @return
+     * @param input binary image
+     * @param color image to draw the contours on
+     * @return color image with the contours found in the input image.
      */
     public Mat drawContour(Mat input, Mat color) {
         Mat contourImg = new Mat();
@@ -2266,7 +2266,7 @@ public class GUI extends javax.swing.JFrame {
      * the main frame in the GUI.
      * 
      * This is used to display the classification value of the fillet.
-     * @param input
+     * @param input string telling what the fillet got classifies as.
      */
     public void setClassificationText(String input) {
         jTextField7.setText(input);
@@ -2281,10 +2281,10 @@ public class GUI extends javax.swing.JFrame {
      * 
      * This is used to display the area of the fillet and the blood spots.
      * 
-     * @param area
-     * @param hb
-     * @param met
-     * @param oxy
+     * @param area area of the fillet
+     * @param hb area of the hemoglobin spots
+     * @param met area of the met-hemoglobin spots
+     * @param oxy area of the oxy-hemoglobin spots
      */
     public void setFilletValues(int area, int hb, int met, int oxy) {
         jTextField2.setText(String.valueOf(area));
@@ -2298,7 +2298,7 @@ public class GUI extends javax.swing.JFrame {
      * 
      * This is used to indicate if logging is turned on or off.
      * 
-     * @return
+     * @return boolean value indication if logging is on or off.
      */
     public boolean getLoggFlag() {
         return loggFlag;
@@ -2310,10 +2310,10 @@ public class GUI extends javax.swing.JFrame {
      * 
      * This is used to display the total amount of classifications in the GUI.
      * 
-     * @param good
-     * @param medium
-     * @param bad
-     * @param small
+     * @param good number of fillets classified as Good during the uptime.
+     * @param medium number of fillets classified as Medium during the uptime.
+     * @param bad number of fillets classified as Bad during the uptime.
+     * @param small number of fillets classified as small during the uptime.
      */
     public void setFilletCount(int good, int medium, int bad, int small) {
         int total = good + medium + bad + small;
@@ -2326,7 +2326,7 @@ public class GUI extends javax.swing.JFrame {
     
     /**
      * Displays the input matrix in Live stream frame in the GUI.
-     * @param input
+     * @param input image from the camera
      */
     public void setStreamFrame(Mat input){
         Mat streamFrame = input;
@@ -2353,7 +2353,7 @@ public class GUI extends javax.swing.JFrame {
      * This is used to display the amount of each classification during the 
      * uptime of the application.
      * 
-     * @param input
+     * @param input string telling what the fillet got classified as.
      */
     public void setFilletSessionCount(String input){
         

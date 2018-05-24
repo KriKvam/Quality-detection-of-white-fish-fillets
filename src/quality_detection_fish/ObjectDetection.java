@@ -65,7 +65,7 @@ public class ObjectDetection extends Thread{
      * Returns the boolean value fishDetected.
      * This value indicates if a fillet has been detected by the object detection.
      * 
-     * @return
+     * @return boolean value indicating if a fillet has been detected
      */
     public boolean getFishDetected(){
         return fishDetected;
@@ -75,9 +75,9 @@ public class ObjectDetection extends Thread{
      * Crops out a rectangle in an image and returns the amount of nonzero 
      * pixels within the rectangle as an integer.
      * 
-     * @param image
-     * @param rectangle
-     * @return
+     * @param image image from the camera
+     * @param rectangle rectangle with specified size.
+     * @return amount of nonzero pixels as integer.
      */
     public int cropAndCount(Mat image, Rect rectangle){
         Mat cropped = new Mat(image, rectangle);
